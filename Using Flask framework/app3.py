@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 import uuid
 import jwt
 import datetime
+from functools import wraps
 
 app = Flask(__name__)
 
@@ -25,6 +26,13 @@ class Todo(db.Model):
 	text = db.Column(db.String(50))
 	complete = db.Column(db.Boolean)
 	user_id = db.Column(db.Integer)
+
+
+def tokenRequired(f):
+	@wraps(f)
+	def decorated(*args, *kwargs)
+
+
 
 #########
 @app.route('/user', methods = ['GET'])
@@ -114,5 +122,7 @@ if __name__ == '__main__':
 
 #class okay, what is @app.route, how are we defining func in it
 #why do we write user_id after user/
+#wraps?
+#positional arguments and kwarg arguments
 #jk 123
 #only login route works with http authentication. all the other routes will work with token
