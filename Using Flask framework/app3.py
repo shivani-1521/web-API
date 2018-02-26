@@ -120,9 +120,3 @@ def login():
 if __name__ == '__main__':
 	app.run(debug = True)
 
-#class okay, what is @app.route, how are we defining func in it
-#why do we write user_id after user/
-#wraps?
-#positional arguments and kwarg arguments
-#jk 123
-#only login route works with http authentication. all the other routes will work with token
